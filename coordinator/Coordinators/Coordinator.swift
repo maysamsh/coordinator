@@ -10,9 +10,6 @@ import UIKit
 
 /// Coordinator handles navigation within the app
 protocol Coordinator: AnyObject {
-    /// Each Coordinator can have its own children coordinators
-    var childCoordinators: [Coordinator] { get set }
-    
     /// The navigation controller for the coordinator
     var navigationController: UINavigationController { get set }
     
@@ -30,12 +27,6 @@ protocol Coordinator: AnyObject {
             - animated: Set this value to true to animate the transition.
      */
     func popViewController(animated: Bool, useCustomAnimation: Bool, transitionType: CATransitionType)
-    
-    /**
-     Configuring the UINavigationController.
-     */
-    func configureNavigationBar()
-    
 }
 
 extension Coordinator {
@@ -73,22 +64,23 @@ extension Coordinator {
             navigationController.popToViewController(viewController, animated: animated)
         }
     }
-    
-    /**
-     Default implementation of `configureNavigationBar()`.
-     */
-    func configureNavigationBar() {
-        /// If you whish to customize the look of the navigation bar and implement your own design
-        /// you could begin with hiding the default bar and use a custom view:
-        /// 
-        /// navigationController.setNavigationBarHidden(true, animated: false)
-    }
-
 }
 
 /// All the top-level coordinators should conform to this protocol
 protocol ParentCoordinator: Coordinator {
+    /// Each Coordinator can have its own children coordinators
+    var childCoordinators: [Coordinator] { get set }
+    /**
+     Adds the given coordinator to the list of children.
+     - Parameters:
+        - child: A coordinator.
+     */
     func addChild(_ child: Coordinator?)
+    /**
+     Tells the parent coordinator that given coordinator is done and should be removed from the list of children.
+     - Parameters:
+        - child: A coordinator.
+     */
     func childDidFinish(_ child: Coordinator?)
 }
 
@@ -98,6 +90,7 @@ protocol ChildCoordinator: Coordinator {
      The body of this function should call `childDidFinish(_ child:)` on the parent coordinator to remove the child from parent's `childCoordinators`.
      */
     func coordinatorDidFinish()
+    /// A reference to the view controller used in the coordinator.
     var viewControllerRef: UIViewController? {get set}
 }
 

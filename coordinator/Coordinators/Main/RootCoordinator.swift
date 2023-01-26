@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RootCoordinator: NSObject, Coordinator, ParentCoordinator {
+final class RootCoordinator: NSObject, Coordinator, ParentCoordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -17,8 +17,8 @@ class RootCoordinator: NSObject, Coordinator, ParentCoordinator {
     }
     
     func start(animated: Bool) {
-        let baseTabBarConreoller = BaseTabBarController()
-        baseTabBarConreoller.coordinator = self
-        navigationController.pushViewController(baseTabBarConreoller, animated: animated)
+        let baseTabBarController = BaseTabBarController(coordinator: self)
+        baseTabBarController.coordinator = self
+        navigationController.pushViewController(baseTabBarController, animated: animated)
     }
 }
