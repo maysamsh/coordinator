@@ -25,6 +25,10 @@ final class BlueCoordinator: ChildCoordinator {
         navigationController.pushViewController(blueViewController, animated: animated)
     }
     
+    func products() {
+        parent?.products()
+    }
+    
     func coordinatorDidFinish() {
         parent?.childDidFinish(self)
     }

@@ -31,4 +31,8 @@ final class LoginCoordinator: ChildCoordinator {
     func coordinatorDidFinish() {
         parent?.childDidFinish(self)
     }
+    
+    func dismissAuthScreens() {
+        parent?.dismissAuthScreens()
+    }
 }

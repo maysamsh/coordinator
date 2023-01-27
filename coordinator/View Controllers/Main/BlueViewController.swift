@@ -10,7 +10,8 @@ import UIKit
 
 final class BlueViewController: UIViewController, DisposableViewController {
     weak var coordinator: BlueCoordinator?
-    
+    private let productsButton = UIButton()
+
     override func viewDidLoad() {
 
     }
@@ -18,6 +19,20 @@ final class BlueViewController: UIViewController, DisposableViewController {
     override func loadView() {
         view = UIView()
         view.backgroundColor = .init(red: 0.56, green: 0.81, blue: 0.91, alpha: 1)
+        
+        view.addSubview(productsButton)
+        productsButton.translatesAutoresizingMaskIntoConstraints = false
+        productsButton.setTitle("Products", for: .normal)
+        NSLayoutConstraint.activate([
+            productsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            productsButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        productsButton.addTarget(self, action: #selector(productsAction(sender: )), for: .touchUpInside)
+    }
+    
+    @objc
+    private func productsAction(sender: UIButton) {
+        coordinator?.products()
     }
     
     func cleanUp() {

@@ -1,14 +1,14 @@
 //
-//  AuthCoordinator.swift
+//  MerchCoordinator.swift
 //  coordinator
 //
-//  Created by Maysam Shahsavari on 2023-01-25.
+//  Created by Maysam Shahsavari on 2023-01-27.
 //
 
 import Foundation
 import UIKit
 
-final class AuthCoordinator: ParentCoordinator {
+final class MerchCoordinator: ParentCoordinator {
     var parent: RootCoordinator?
     
     var childCoordinators = [Coordinator]()
@@ -19,13 +19,10 @@ final class AuthCoordinator: ParentCoordinator {
     }
     
     func start(animated: Bool = false) {
-        /// Auth Coordinator Inittilization
+        /// Merch Coordinator Inittilization
     }
     
-    func dismissAuthScreens() {
-        /// Making sure BaseTabBarViewController's navigation controller is hidden
-        parent?.baseTabBarController?.hideNavigationController()
-        
+    func dismissMerchScreens() {
         let lastCoordinator = childCoordinators.popLast()
         for item in childCoordinators.reversed() {
             if item is ChildCoordinator {

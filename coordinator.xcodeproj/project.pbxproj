@@ -33,6 +33,15 @@
 		7D5CB0CC2982D1D400CA6C0D /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0CB2982D1D400CA6C0D /* RegisterCoordinator.swift */; };
 		7D5CB0CE2982FA3800CA6C0D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0CD2982FA3800CA6C0D /* ForgotPasswordViewController.swift */; };
 		7D5CB0D02982FACD00CA6C0D /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0CF2982FACC00CA6C0D /* ForgotPasswordCoordinator.swift */; };
+		7D5CB0D42984243E00CA6C0D /* MerchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0D32984243E00CA6C0D /* MerchCoordinator.swift */; };
+		7D5CB0D62984255000CA6C0D /* MerchCoordinator+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0D52984255000CA6C0D /* MerchCoordinator+Ext.swift */; };
+		7D5CB0D92984288300CA6C0D /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0D82984288300CA6C0D /* ProductsViewController.swift */; };
+		7D5CB0DB298429CC00CA6C0D /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0DA298429CC00CA6C0D /* ProductsCoordinator.swift */; };
+		7D5CB0DD29843A9800CA6C0D /* SquareCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0DC29843A9800CA6C0D /* SquareCoordinator.swift */; };
+		7D5CB0DF29843ADE00CA6C0D /* SquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0DE29843ADE00CA6C0D /* SquareViewController.swift */; };
+		7D5CB0E129844AA800CA6C0D /* TextViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E029844AA800CA6C0D /* TextViewerViewController.swift */; };
+		7D5CB0E32984523200CA6C0D /* MessageViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E22984523200CA6C0D /* MessageViewerCoordinator.swift */; };
+		7D5CB0E529845D5700CA6C0D /* CommonTextCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E429845D5700CA6C0D /* CommonTextCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +73,15 @@
 		7D5CB0CB2982D1D400CA6C0D /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		7D5CB0CD2982FA3800CA6C0D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7D5CB0CF2982FACC00CA6C0D /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0D32984243E00CA6C0D /* MerchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0D52984255000CA6C0D /* MerchCoordinator+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MerchCoordinator+Ext.swift"; sourceTree = "<group>"; };
+		7D5CB0D82984288300CA6C0D /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		7D5CB0DA298429CC00CA6C0D /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0DC29843A9800CA6C0D /* SquareCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0DE29843ADE00CA6C0D /* SquareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareViewController.swift; sourceTree = "<group>"; };
+		7D5CB0E029844AA800CA6C0D /* TextViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewerViewController.swift; sourceTree = "<group>"; };
+		7D5CB0E22984523200CA6C0D /* MessageViewerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewerCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0E429845D5700CA6C0D /* CommonTextCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				7D56E22A29202C9200FE18B3 /* Coordinator.swift */,
+				7D5CB0D22984240300CA6C0D /* Merch */,
 				7D5CB0C22981B77400CA6C0D /* Auth */,
 				7D5CB0B72981A82200CA6C0D /* Main */,
 			);
@@ -132,6 +151,8 @@
 		7D56E23129203E7800FE18B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D5CB0E029844AA800CA6C0D /* TextViewerViewController.swift */,
+				7D5CB0D72984286500CA6C0D /* Merch */,
 				7D5CB0BE2981B38000CA6C0D /* Main */,
 				7D5CB0BD2981B37400CA6C0D /* Auth */,
 			);
@@ -155,6 +176,7 @@
 				7D0B98992980890F00EFBDAA /* GreenCoordinator.swift */,
 				7D5CB0AE298180D400CA6C0D /* BlueCoordinator.swift */,
 				7D5CB0B22981845900CA6C0D /* LavenderCoordinator.swift */,
+				7D5CB0E429845D5700CA6C0D /* CommonTextCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -205,6 +227,27 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D5CB0D22984240300CA6C0D /* Merch */ = {
+			isa = PBXGroup;
+			children = (
+				7D5CB0D32984243E00CA6C0D /* MerchCoordinator.swift */,
+				7D5CB0DA298429CC00CA6C0D /* ProductsCoordinator.swift */,
+				7D5CB0DC29843A9800CA6C0D /* SquareCoordinator.swift */,
+				7D5CB0D52984255000CA6C0D /* MerchCoordinator+Ext.swift */,
+				7D5CB0E22984523200CA6C0D /* MessageViewerCoordinator.swift */,
+			);
+			path = Merch;
+			sourceTree = "<group>";
+		};
+		7D5CB0D72984286500CA6C0D /* Merch */ = {
+			isa = PBXGroup;
+			children = (
+				7D5CB0D82984288300CA6C0D /* ProductsViewController.swift */,
+				7D5CB0DE29843ADE00CA6C0D /* SquareViewController.swift */,
+			);
+			path = Merch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,29 +320,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D5CB0D62984255000CA6C0D /* MerchCoordinator+Ext.swift in Sources */,
 				7D0B98932980842700EFBDAA /* GreenViewController.swift in Sources */,
 				7D5CB0CE2982FA3800CA6C0D /* ForgotPasswordViewController.swift in Sources */,
 				7D5CB0D02982FACD00CA6C0D /* ForgotPasswordCoordinator.swift in Sources */,
 				7D56E22B29202C9200FE18B3 /* Coordinator.swift in Sources */,
 				7D5CB0C42981B79500CA6C0D /* LoginCoordinator.swift in Sources */,
+				7D5CB0D92984288300CA6C0D /* ProductsViewController.swift in Sources */,
 				7D0B989A2980890F00EFBDAA /* GreenCoordinator.swift in Sources */,
+				7D5CB0DB298429CC00CA6C0D /* ProductsCoordinator.swift in Sources */,
 				7D56E22E29202D1600FE18B3 /* UINavigationController+Ext.swift in Sources */,
 				7D5CB0C62981BA2100CA6C0D /* AuthCoordinator+Ext.swift in Sources */,
+				7D5CB0D42984243E00CA6C0D /* MerchCoordinator.swift in Sources */,
 				7D5CB0C02981B3A800CA6C0D /* LoginViewController.swift in Sources */,
 				7D5CB0B92981AABD00CA6C0D /* DisposableViewController.swift in Sources */,
 				7D56E2162920293800FE18B3 /* AppDelegate.swift in Sources */,
+				7D5CB0E129844AA800CA6C0D /* TextViewerViewController.swift in Sources */,
 				7D5CB0CA2982CEA400CA6C0D /* RegisterViewController.swift in Sources */,
 				7D5CB0B32981845900CA6C0D /* LavenderCoordinator.swift in Sources */,
 				7D5CB0B52981A7D800CA6C0D /* AuthCoordinator.swift in Sources */,
 				7D56E23329203FD200FE18B3 /* BaseTabBarController.swift in Sources */,
+				7D5CB0E32984523200CA6C0D /* MessageViewerCoordinator.swift in Sources */,
 				7D5CB0CC2982D1D400CA6C0D /* RegisterCoordinator.swift in Sources */,
 				7D5CB0B12981840100CA6C0D /* LavenderViewController.swift in Sources */,
 				7D56E2302920343500FE18B3 /* RootCoordinator.swift in Sources */,
 				7D56E2182920293800FE18B3 /* SceneDelegate.swift in Sources */,
+				7D5CB0DF29843ADE00CA6C0D /* SquareViewController.swift in Sources */,
 				7D5CB0AF298180D400CA6C0D /* BlueCoordinator.swift in Sources */,
+				7D5CB0E529845D5700CA6C0D /* CommonTextCoordinator.swift in Sources */,
 				7D0B9898298087C000EFBDAA /* RootCoordinator+Ext.swift in Sources */,
 				7D5CB0BC2981B15400CA6C0D /* ConsoleLogger.swift in Sources */,
 				7D0B98952980859F00EFBDAA /* BlueViewController.swift in Sources */,
+				7D5CB0DD29843A9800CA6C0D /* SquareCoordinator.swift in Sources */,
 				7D56E2362920425800FE18B3 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

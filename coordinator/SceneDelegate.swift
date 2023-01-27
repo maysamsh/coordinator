@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let navigationController = UINavigationController()
-        
+        navigationController.setNavigationBarHidden(true, animated: false)
         let coordinator = RootCoordinator(navigationController: navigationController)
         
         // An instance of RootCoordinator takes control of the app flow

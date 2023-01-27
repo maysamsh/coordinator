@@ -41,11 +41,18 @@ class LoginViewController: UIViewController, DisposableViewController {
         
         signInButton.addTarget(self, action: #selector(loginAction(sender:)), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(goToRegister(sender:)), for: .touchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(self.dismissViewController))
+    }
+
+    @objc
+    private func dismissViewController() {
+        coordinator?.dismissAuthScreens()
     }
     
     @objc
     private func loginAction(sender: UIButton) {
-        coordinator?.popViewController(animated: true, useCustomAnimation: true)
+        coordinator?.dismissAuthScreens()
     }
     
     @objc

@@ -25,6 +25,10 @@ final class GreenCoordinator: ChildCoordinator {
         navigationController.pushViewController(greenViewController, animated: animated)
     }
     
+    func commonText(_ text: String?) {
+        parent?.commonText(text: text, navigationController: navigationController, animated: true)
+    }
+    
     func coordinatorDidFinish() {
         parent?.childDidFinish(self)
     }
