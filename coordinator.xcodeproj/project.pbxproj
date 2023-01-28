@@ -42,6 +42,7 @@
 		7D5CB0E129844AA800CA6C0D /* TextViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E029844AA800CA6C0D /* TextViewerViewController.swift */; };
 		7D5CB0E32984523200CA6C0D /* MessageViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E22984523200CA6C0D /* MessageViewerCoordinator.swift */; };
 		7D5CB0E529845D5700CA6C0D /* CommonTextCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E429845D5700CA6C0D /* CommonTextCoordinator.swift */; };
+		7D5CB0E72985942100CA6C0D /* UIApplicatioin+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CB0E62985942100CA6C0D /* UIApplicatioin+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		7D5CB0E029844AA800CA6C0D /* TextViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewerViewController.swift; sourceTree = "<group>"; };
 		7D5CB0E22984523200CA6C0D /* MessageViewerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewerCoordinator.swift; sourceTree = "<group>"; };
 		7D5CB0E429845D5700CA6C0D /* CommonTextCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextCoordinator.swift; sourceTree = "<group>"; };
+		7D5CB0E62985942100CA6C0D /* UIApplicatioin+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplicatioin+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				7D56E22D29202D1600FE18B3 /* UINavigationController+Ext.swift */,
+				7D5CB0E62985942100CA6C0D /* UIApplicatioin+Ext.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				7D5CB0B32981845900CA6C0D /* LavenderCoordinator.swift in Sources */,
 				7D5CB0B52981A7D800CA6C0D /* AuthCoordinator.swift in Sources */,
 				7D56E23329203FD200FE18B3 /* BaseTabBarController.swift in Sources */,
+				7D5CB0E72985942100CA6C0D /* UIApplicatioin+Ext.swift in Sources */,
 				7D5CB0E32984523200CA6C0D /* MessageViewerCoordinator.swift in Sources */,
 				7D5CB0CC2982D1D400CA6C0D /* RegisterCoordinator.swift in Sources */,
 				7D5CB0B12981840100CA6C0D /* LavenderViewController.swift in Sources */,

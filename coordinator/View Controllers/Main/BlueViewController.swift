@@ -30,6 +30,13 @@ final class BlueViewController: UIViewController, DisposableViewController {
         productsButton.addTarget(self, action: #selector(productsAction(sender: )), for: .touchUpInside)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if self.isMovingFromParent {
+            cleanUp()
+        }
+    }
+    
     @objc
     private func productsAction(sender: UIButton) {
         coordinator?.products()

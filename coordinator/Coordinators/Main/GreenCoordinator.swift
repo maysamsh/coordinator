@@ -29,6 +29,10 @@ final class GreenCoordinator: ChildCoordinator {
         parent?.commonText(text: text, navigationController: navigationController, animated: true)
     }
     
+    func blueScreen() {
+        parent?.blueScreen(navigationController: navigationController, animated: true)
+    }
+    
     func coordinatorDidFinish() {
         parent?.childDidFinish(self)
     }

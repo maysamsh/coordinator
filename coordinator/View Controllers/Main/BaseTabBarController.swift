@@ -13,7 +13,6 @@ final class BaseTabBarController: UITabBarController {
     let authCoordinator = AuthCoordinator(navigationController: UINavigationController())
     let merchCoordinator = MerchCoordinator(navigationController: UINavigationController())
     let greenCoordinator = GreenCoordinator(navigationController: UINavigationController())
-
     let blueCoordinator = BlueCoordinator(navigationController: UINavigationController())
     let lavenderCoordnator = LavenderCoordinator(navigationController: UINavigationController())
     
