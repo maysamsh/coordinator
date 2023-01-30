@@ -54,6 +54,13 @@ final class GreenViewController: UIViewController, DisposableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        coordinator?.cleanUpZombieCoordinators()
+    }
+    
+    
     @objc
     private func blueButtonAction(sender: UIButton) {
         coordinator?.blueScreen()

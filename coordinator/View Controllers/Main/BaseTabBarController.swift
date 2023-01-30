@@ -10,11 +10,12 @@ import UIKit
 final class BaseTabBarController: UITabBarController {
     var coordinator: RootCoordinator?
 
-    let authCoordinator = AuthCoordinator(navigationController: UINavigationController())
-    let merchCoordinator = MerchCoordinator(navigationController: UINavigationController())
-    let greenCoordinator = GreenCoordinator(navigationController: UINavigationController())
-    let blueCoordinator = BlueCoordinator(navigationController: UINavigationController())
-    let lavenderCoordnator = LavenderCoordinator(navigationController: UINavigationController())
+    private let authCoordinator = AuthCoordinator(navigationController: UINavigationController())
+    private let merchCoordinator = MerchCoordinator(navigationController: UINavigationController())
+    private let greenCoordinator = GreenCoordinator(navigationController: UINavigationController())
+    private let blueCoordinator = BlueCoordinator(navigationController: UINavigationController())
+    private let lavenderCoordnator = LavenderCoordinator(navigationController: UINavigationController())
+    private (set) var initCoordinators = [Coordinator]()
     
     init(coordinator: RootCoordinator) {
         self.coordinator = coordinator
@@ -48,6 +49,7 @@ final class BaseTabBarController: UITabBarController {
         blueCoordinator.start(animated: false)
         greenCoordinator.start(animated: false)
 
+        initCoordinators = coordinator?.childCoordinators ?? []
         viewControllers = [greenCoordinator.navigationController, blueCoordinator.navigationController, lavenderCoordnator.navigationController]
     }
     
@@ -55,5 +57,28 @@ final class BaseTabBarController: UITabBarController {
     func hideNavigationController() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    func cleanUpZombieCoordinators() {
+        if let currentCoordinators = coordinator?.childCoordinators {
+            for item in currentCoordinators {
+                let contains = initCoordinators.contains(where: {$0 === item})
+                if contains == false {
 
+                    /// Dismissing newly `MerchCoordinator` children coordinators
+                    if let merchCoordinator = item as? MerchCoordinator {
+                        merchCoordinator.dismissMerchScreens()
+                        coordinator?.childDidFinish(merchCoordinator)
+                    }
+                    
+                    /// Removing the `BlueCoordinator` which was added throught the `GreenViewController`
+                    if let blueCoordinator = item as? BlueCoordinator, let viewController = blueCoordinator.viewControllerRef as? DisposableViewController {
+                        viewController.cleanUp()
+                        blueCoordinator.viewControllerRef?.navigationController?.popViewController(animated: false)
+                        coordinator?.childDidFinish(blueCoordinator)
+                    }
+                }
+            }
+        }
+    
+    }
 }
