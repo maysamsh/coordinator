@@ -30,7 +30,7 @@ final class GreenCoordinator: ChildCoordinator {
     }
     
     func blueScreen() {
-        parent?.blueScreen(navigationController: navigationController, animated: true)
+        parent?.blueScreen(useTheMainMerchCoordinator: false, navigationController: navigationController, animated: true)
     }
     
     func coordinatorDidFinish() {

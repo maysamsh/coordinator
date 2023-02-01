@@ -16,8 +16,8 @@ extension RootCoordinator {
         greenCoordinator.start(animated: animated)
     }
     
-    func blueScreen(navigationController: UINavigationController, animated: Bool) {
-        let blueCoordinator = BlueCoordinator(navigationController: navigationController)
+    func blueScreen(useTheMainMerchCoordinator: Bool, navigationController: UINavigationController, animated: Bool) {
+        let blueCoordinator = BlueCoordinator(navigationController: navigationController, useTheMainMerchCoordinator: useTheMainMerchCoordinator)
         blueCoordinator.parent = self
         addChild(blueCoordinator)
         blueCoordinator.start(animated: animated)
@@ -50,24 +50,28 @@ extension RootCoordinator {
     }
     
     // MARK: - Merch
-    func products() {
+    func products(useTheMainMerchCoordinator: Bool) {
         var topNavigationController: UINavigationController?
         topNavigationController = UIApplication.shared.topNavigatioinController()
         
         if let topNavigationController {
-            let newMerchCoordinator = MerchCoordinator(navigationController: UINavigationController())
-            addChild(newMerchCoordinator)
-            newMerchCoordinator.products(navigationController: topNavigationController, animated: true)
-
+            if useTheMainMerchCoordinator {
+                for child in childCoordinators {
+                    if child is MerchCoordinator {
+                        let merchCoordinator = child as! MerchCoordinator
+                        /// If you want to use the main navigation controller, you can use `navigationController` which will replace the entire screen
+                        /// If you want this behaviour, you can get rid of extra `setNavigationBarHidden(_ ,animated:)` calls
+                        merchCoordinator.products(navigationController: topNavigationController, animated: true)
+                    }
+                }
+            } else {
+                let newMerchCoordinator = MerchCoordinator(navigationController: UINavigationController())
+                addChild(newMerchCoordinator)
+                newMerchCoordinator.products(navigationController: topNavigationController, animated: true)
+            }
+            
         }
-//        for child in childCoordinators {
-//            if child is MerchCoordinator, let topNavigationController {
-//                let merchCoordinator = child as! MerchCoordinator
-//                /// If you want to use the main navigation controller, you can use `navigationController` which will replace the entire screen
-//                /// If you want this behaviour, you can get rid of extra `setNavigationBarHidden(_ ,animated:)` calls
-//                merchCoordinator.products(navigationController: topNavigationController, animated: true)
-//            }
-//        }
+        
     }
 }
 

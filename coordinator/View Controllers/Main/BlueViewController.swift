@@ -36,6 +36,15 @@ final class BlueViewController: UIViewController, DisposableViewController {
             cleanUp()
         }
     }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        coordinator?.parent?.baseTabBarController?.cleanUpMerch()
+        print(coordinator?.parent?.baseTabBarController?.merchCoordinator.childCoordinators)
+        
+    }
+    
     
     @objc
     private func productsAction(sender: UIButton) {

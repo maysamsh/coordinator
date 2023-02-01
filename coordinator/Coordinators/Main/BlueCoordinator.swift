@@ -12,9 +12,11 @@ final class BlueCoordinator: ChildCoordinator {
     var viewControllerRef: UIViewController?
     var parent: RootCoordinator?
     var navigationController: UINavigationController
+    private var useTheMainMerchCoordinator: Bool
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, useTheMainMerchCoordinator: Bool) {
         self.navigationController = navigationController
+        self.useTheMainMerchCoordinator = useTheMainMerchCoordinator
     }
     
     func start(animated: Bool) {
@@ -26,7 +28,7 @@ final class BlueCoordinator: ChildCoordinator {
     }
     
     func products() {
-        parent?.products()
+        parent?.products(useTheMainMerchCoordinator: self.useTheMainMerchCoordinator)
     }
     
     func coordinatorDidFinish() {

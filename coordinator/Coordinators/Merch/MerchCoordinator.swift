@@ -34,7 +34,7 @@ final class MerchCoordinator: ParentCoordinator {
                 self.childDidFinish(childCoordinator)
             }
         }
-        lastCoordinator?.popViewController(animated: true, useCustomAnimation: true)
+        lastCoordinator?.popViewController(animated: true, useCustomAnimation: false)
         navigationController.customPopToRootViewController()
     }
 }
