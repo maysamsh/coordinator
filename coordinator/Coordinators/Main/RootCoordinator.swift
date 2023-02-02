@@ -23,4 +23,8 @@ final class RootCoordinator: NSObject, Coordinator, ParentCoordinator {
         baseTabBarController!.coordinator = self
         navigationController.pushViewController(baseTabBarController!, animated: animated)
     }
+    
+    func cleanUpMerch() {
+        baseTabBarController?.cleanUpMerch()
+    }
 }

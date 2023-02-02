@@ -34,4 +34,8 @@ final class BlueCoordinator: ChildCoordinator {
     func coordinatorDidFinish() {
         parent?.childDidFinish(self)
     }
+    
+    func cleanUpMerch() {
+        parent?.cleanUpMerch()
+    }
 }

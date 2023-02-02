@@ -8,7 +8,7 @@
 import UIKit
 
 final class BaseTabBarController: UITabBarController {
-    var coordinator: RootCoordinator?
+    weak var coordinator: RootCoordinator?
 
     private let authCoordinator = AuthCoordinator(navigationController: UINavigationController())
     let merchCoordinator = MerchCoordinator(navigationController: UINavigationController())
@@ -62,9 +62,6 @@ final class BaseTabBarController: UITabBarController {
         merchCoordinator.dismissMerchScreens()
     }
     
-    /*
-     create another one for when blue coordinator is double tapped, go through the exiting merch coordinator children and clean them up
-     */
     func cleanUpZombieCoordinators() {
         /// Since the `MerchCoordinator` could be initialized from only two places we can assume every other instance of it
         /// existing inside the `childCoordinators` belongs to the `GreenViewController` and is safe to be removed.

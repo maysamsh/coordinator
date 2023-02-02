@@ -45,6 +45,12 @@ extension Coordinator {
         }
     }
     
+    /**
+     Pops view controllers until the specified view controller is at the top of the navigation stack.
+     - Parameters:
+        - ofClass: The view controller that you want to be at the top of the stack. This view controller must currently be on the navigation stack.
+        - animated: Set this value to true to animate the transition.
+     */
     func popToViewController(ofClass: AnyClass, animated: Bool = true) {
         navigationController.popToViewController(ofClass: ofClass, animated: animated)
     }
@@ -84,16 +90,6 @@ protocol ParentCoordinator: Coordinator {
     func childDidFinish(_ child: Coordinator?)
 }
 
-/// All Child coordinators should conform to this protocol
-protocol ChildCoordinator: Coordinator {
-    /**
-     The body of this function should call `childDidFinish(_ child:)` on the parent coordinator to remove the child from parent's `childCoordinators`.
-     */
-    func coordinatorDidFinish()
-    /// A reference to the view controller used in the coordinator.
-    var viewControllerRef: UIViewController? {get set}
-}
-
 extension ParentCoordinator {
     //MARK: - Coordinator Functions
     /**
@@ -122,3 +118,12 @@ extension ParentCoordinator {
     }
 }
 
+/// All Child coordinators should conform to this protocol
+protocol ChildCoordinator: Coordinator {
+    /**
+     The body of this function should call `childDidFinish(_ child:)` on the parent coordinator to remove the child from parent's `childCoordinators`.
+     */
+    func coordinatorDidFinish()
+    /// A reference to the view controller used in the coordinator.
+    var viewControllerRef: UIViewController? {get set}
+}
