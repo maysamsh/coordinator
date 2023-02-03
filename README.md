@@ -4,7 +4,7 @@ This is a demo app for an article on using Coordinator pattern in Swift. In the 
 
 The relationship between coordinators are like this:
 
-![https://raw.githubusercontent.com/maysamsh/coordinator/main/coordinators.png]()
+![https://github.com/maysamsh/coordinator/blob/main/coordinators.png?raw=true](https://github.com/maysamsh/coordinator/blob/main/coordinators.png?raw=true)
 
 The features of the the demo app are:
 
