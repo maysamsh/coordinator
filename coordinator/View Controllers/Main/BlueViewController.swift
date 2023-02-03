@@ -41,7 +41,6 @@ final class BlueViewController: UIViewController, DisposableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         coordinator?.cleanUpMerch()
-        
     }
     
     @objc

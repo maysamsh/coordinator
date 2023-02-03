@@ -69,9 +69,7 @@ extension RootCoordinator {
                 addChild(newMerchCoordinator)
                 newMerchCoordinator.products(navigationController: topNavigationController, animated: true)
             }
-            
         }
-        
     }
 }
 

@@ -35,7 +35,7 @@ final class GreenViewController: UIViewController, DisposableViewController {
         let attributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body), NSAttributedString.Key.foregroundColor: UIColor.black]
         let termsButtonAttibutedTitle = NSMutableAttributedString(string: "Show some text...", attributes: attributes)
         termsButton.setAttributedTitle(termsButtonAttibutedTitle, for: .normal)
-        let blueButtonAttributedText = NSMutableAttributedString(string: "Instantiate another blue screeen...", attributes: attributes)
+        let blueButtonAttributedText = NSMutableAttributedString(string: "Instantiate another blue screen...", attributes: attributes)
         blueViewControllerButton.setAttributedTitle(blueButtonAttributedText, for: .normal)
         
         stack.axis = .vertical

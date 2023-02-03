@@ -85,7 +85,6 @@ final class BaseTabBarController: UITabBarController {
                 }
             }
         }
-    
     }
     
 }

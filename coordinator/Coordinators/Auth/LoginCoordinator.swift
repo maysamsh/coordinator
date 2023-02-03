@@ -17,12 +17,12 @@ final class LoginCoordinator: ChildCoordinator {
         self.navigationController = navigationController
     }
     
-    func start(animated: Bool) {
-        let loginViewController = LoginViewController()
-        viewControllerRef = loginViewController
-        loginViewController.coordinator = self
-        navigationController.customPushViewController(viewController: loginViewController)
-    }
+func start(animated: Bool) {
+    let loginViewController = LoginViewController()
+    viewControllerRef = loginViewController
+    loginViewController.coordinator = self
+    navigationController.customPushViewController(viewController: loginViewController)
+}
     
     func register() {
         parent?.register(navigationController: navigationController, animated: true)
